@@ -1,64 +1,36 @@
 #!/bin/bash
 
 # simple-interest.sh
-# A Bash script to calculate Simple Interest based on user input.
-#
-# Formula: Simple Interest (SI) = (Principal * Rate * Time) / 100
-#
-# Inputs:
-#   principal      - The initial amount of money (in currency units)
-#   rate           - Annual rate of interest (in %)
-#   time_period    - Duration of the investment/loan (in years)
-#
-# Output:
-#   The computed Simple Interest
+# Bash script to calculate Simple Interest given principal, rate of interest, and time period.
+# Simple Interest = (Principal * Rate * Time) / 100
 
-echo "========================================"
-echo "       Simple Interest Calculator       "
-echo "========================================"
-echo ""
+echo "================================================"
+echo "         Simple Interest Calculator             "
+echo "================================================"
 
-# Prompt the user for principal
-read -p "Enter Principal (amount in $): " principal
+# Input: Principal
+echo -n "Enter the Principal amount: "
+read principal
 
-# Validate principal
-if [[ -z "$principal" || ! "$principal" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-    echo "Error: Please enter a valid positive number for Principal."
-    exit 1
-fi
+# Input: Rate of Interest
+echo -n "Enter the Rate of Interest (% per annum): "
+read rate
 
-# Prompt the user for rate of interest
-read -p "Enter Rate of Interest (% per annum): " rate
+# Input: Time Period
+echo -n "Enter the Time Period (in years): "
+read time
 
-# Validate rate
-if [[ -z "$rate" || ! "$rate" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-    echo "Error: Please enter a valid positive number for Rate of Interest."
-    exit 1
-fi
+# Calculate Simple Interest
+simple_interest=$(echo "scale=2; ($principal * $rate * $time) / 100" | bc)
 
-# Prompt the user for time period
-read -p "Enter Time Period (in years): " time_period
+# Calculate Total Amount
+total=$(echo "scale=2; $principal + $simple_interest" | bc)
 
-# Validate time period
-if [[ -z "$time_period" || ! "$time_period" =~ ^[0-9]+(\.[0-9]+)?$ ]]; then
-    echo "Error: Please enter a valid positive number for Time Period."
-    exit 1
-fi
-
-# Calculate Simple Interest using bc for floating-point arithmetic
-simple_interest=$(echo "scale=2; ($principal * $rate * $time_period) / 100" | bc)
-
-# Calculate total amount
-total_amount=$(echo "scale=2; $principal + $simple_interest" | bc)
-
-echo ""
-echo "========================================"
-echo "             Results                    "
-echo "========================================"
-echo "  Principal         : \$$principal"
-echo "  Rate of Interest  : $rate%"
-echo "  Time Period       : $time_period year(s)"
-echo "----------------------------------------"
-echo "  Simple Interest   : \$$simple_interest"
-echo "  Total Amount      : \$$total_amount"
-echo "========================================"
+echo "================================================"
+echo "Principal        : $principal"
+echo "Rate of Interest : $rate%"
+echo "Time Period      : $time years"
+echo "------------------------------------------------"
+echo "Simple Interest  : $simple_interest"
+echo "Total Amount     : $total"
+echo "================================================"

@@ -1,49 +1,59 @@
 # Simple Interest Calculator
 
-## Project Name
-**Simple Interest Calculator** – A lightweight Bash-based tool to compute simple interest from user-provided principal, rate, and time inputs.
+## Project Details
 
-## Project Description
-This project is a beginner-friendly open-source Bash script that helps users calculate **Simple Interest** quickly from the command line.
+This project provides a simple interest calculator implemented as a Bash script. It computes simple interest based on user input.
 
-The formula used:
+## Introduction
+
+Simple Interest is calculated using the formula:
+
 ```
-Simple Interest (SI) = (Principal × Rate × Time) / 100
+Simple Interest = (Principal * Rate * Time) / 100
 ```
+
+Where:
+- **Principal** – The initial amount of money
+- **Rate** – The annual rate of interest (in %)
+- **Time** – The time period (in years)
 
 ## Getting Started
 
 ### Prerequisites
-- A Unix/Linux/macOS terminal, or Git Bash on Windows
-- Bash shell (version 4.0 or higher recommended)
+- Bash shell (version 4.0 or higher)
+- Unix/Linux/macOS terminal or Git Bash on Windows
 
 ### Installation
+
 1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/simple-interest-calculator.git
-   ```
-2. Navigate into the project folder:
-   ```bash
-   cd simple-interest-calculator
-   ```
+```bash
+git clone https://github.com/QinwanAzhar/simple-interest-calculator.git
+```
+
+2. Navigate to the project directory:
+```bash
+cd simple-interest-calculator
+```
+
 3. Make the script executable:
-   ```bash
-   chmod +x simple-interest.sh
-   ```
+```bash
+chmod +x simple-interest.sh
+```
 
 ### Usage
+
 Run the script:
 ```bash
 ./simple-interest.sh
 ```
-You will be prompted to enter:
-- **Principal** – the initial amount of money
-- **Rate of Interest** – annual rate (in %)
-- **Time Period** – duration in years
 
-The script will output the computed Simple Interest.
+Enter the following inputs when prompted:
+- Principal amount
+- Rate of interest (% per annum)
+- Time period (in years)
 
-## Example
+### Example
+
 ```
 Enter Principal: 1000
 Enter Rate of Interest (% per annum): 5
@@ -51,18 +61,20 @@ Enter Time Period (in years): 3
 Simple Interest = 150.00
 ```
 
-## Contributing
-We welcome all contributions! Please read [CONTRIBUTING.md](CONTRIBUTING.md) before submitting a pull request.
+## Project Name
+Simple Interest Calculator
 
-## Code of Conduct
-This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md). By participating, you are expected to uphold this code.
+## Project Description
+A lightweight Bash script that computes simple interest from user-provided principal, rate of interest, and time period inputs. This project is intended for educational purposes and demonstrates basic Bash scripting concepts.
+
+## Author
+Qinwan Azhar
 
 ## License
-This project is licensed under the **Apache License 2.0** – see the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
 
-## Authors
-- Alex Rivera
+## Code of Conduct
+This project follows the [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Acknowledgements
-- Inspired by IBM Developer Skills Network open-source curriculum
-- [Contributor Covenant](https://www.contributor-covenant.org/) for the Code of Conduct template
+## Contributing
+See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
